@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+footer{
+    background-color: #ff0000;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+.titulo2{
+    text-align: center;
+    margin-top: 20px;
+}
+.icon{
+    width: 110px;
+    height: 100px;
+}
+.btn{
+    color: rgb(255, 255, 255);
+}
+main {
+    margin-top: 20px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+#movieTitle {
+    width: 70%;
+    padding: 0.5rem;
+}
+
+#searchButton {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+#error {
+    color: red;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+    }
+
+    #movieTitle {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Búsqueda</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Historial de Peliculas</h1>
+    </header>
+
+    <main>
+        <div id="history"></div>
+    </main>
+
+    <footer>
+        <a  class="btn" href="index.html">Volver al Buscador</a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const history = JSON.parse(sessionStorage.getItem('movieHistory')) || [];
+            const historyContainer = document.getElementById('history');
+            historyContainer.innerHTML = '';
+
+            if (history.length === 0) {
+                historyContainer.innerHTML = '<p>No hay historial de búsqueda.</p>';
+                return;
+            }
+
+            history.forEach(movie => {
+                const movieInfo = `
+                    <h2>${movie.Title}</h2>
+                    <p><strong>Año:</strong> ${movie.Year}</p>
+                    <p><strong>Director:</strong> ${movie.Director}</p>
+                    <img src="${movie.Poster !== "N/A" ? movie.Poster : 'placeholder.jpg'}" alt="Póster de ${movie.Title}">
+                `;
+                historyContainer.innerHTML += movieInfo;
+            });
+        });
+    </script>
+</body>
+</html>
+
+
